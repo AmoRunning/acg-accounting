@@ -1,0 +1,94 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--semi-color-fill-2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--semi-color-fill-3);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--semi-color-fill-2) transparent;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #d36b46, #b13e2d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Drag */
+.record-card-wrapper.dragging {
+  opacity: 0.4;
+  transform: scale(0.97);
+}
+
+.record-card-wrapper.drag-over {
+  outline: 2px dashed #6366f1;
+  outline-offset: 2px;
+  background: #eef2ff;
+  border-radius: 8px;
+}
+
+.drag-handle {
+  cursor: grab;
+  font-size: 1.2rem;
+  color: var(--semi-color-text-2);
+  user-select: none;
+  line-height: 1;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+
+/* Image viewer */
+.image-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.image-viewer-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+
+/* Record grid */
+.record-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 769px) {
+  .record-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
